@@ -1,0 +1,74 @@
+/*All Text*/
+* {
+  font-family: "Sam", sans-serif; 
+  font-size: 34px;
+}
+/*Paragraph Spacing*/
+p {
+  margin-top: 15px;
+  margin-bottom: -0px;
+}
+
+/*Header 1 "Hello there, my name is Kevin!"*/
+h1 {
+  padding: 0px 0x 0px 0px;
+}
+
+/*Body*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+  
+  /* Background */
+  .outer_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    padding: 0 100px; /* Add dynamic padding */
+  }
+
+  /* Inner Container */
+.inner_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  background-color: #87CEFA;
+}
+  
+  /* Text styles */
+  .text {
+    padding: -0px 20px 20px 15px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 19 10 10px rgba(0, 0, 0, 0.2);
+    margin: 10px 10px 10px 10px;
+  }
+
+.border {
+  padding: -0px 20px 5px 15px;
+  border-style: solid;
+  border-color:#87CEFA;
+  border-width: 10px;
+  border-radius: 20px;
+  box-shadow: 19 10 10px rgba(0, 0, 0, 0.2);
+  margin: 10px 10px 10px 10px;
+  background-color: white;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+@font-face {
+  font-family: 'Sam'; /* choose a name for your font */
+  src: url('Fonts/Sam') format('opentype');
+}
