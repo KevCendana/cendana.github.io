@@ -9,11 +9,11 @@ function mooSuffix () {
     var inputText = document.getElementById("inputText");
     var wordArr = inputText.value.split(".");           //removes all occurences of char and ends the array index there
                                                         //["Hi there.". "I'm Kevin.", "Goodbye."]
-    inputText.value = " ";
-    for (let i = 0; i < wordArr.length - 1; i++) {
-        inputText.value += (wordArr[i] + "-moo.");
-    }
-    inputText.value=wordArr.join(wordsArr);
+    inputText.value = "";
+    // for (let i = 0; i < wordArr.length - 1; i++) {
+    //     inputText.value += (wordArr[i] + "-moo.");
+    // }
+    inputText.value=wordArr.join("-moo.");
 }
 
 function enlargeText() {
