@@ -1,74 +1,136 @@
-/*All Text*/
-* {
-  font-family: "Sam", sans-serif; 
-  font-size: 34px;
-}
-/*Paragraph Spacing*/
+/** All Paragraph Spacing ----------------------------------------------------*/
 p {
   margin-top: 15px;
   margin-bottom: -0px;
 }
 
-/*Header 1 "Hello there, my name is Kevin!"*/
-h1 {
-  padding: 0px 0x 0px 0px;
+/** All Text -----------------------------------------------------------------*/
+* {
+  font-family: "Avenir", sans-serif;
+  font-size: 34px;
+  background-color: white;
+  color: black;
+}
+/*t1 All Text (dark_mode)*/
+html.dark_mode *, body.dark_mode * {
+  background-color: black;
+  color:white;
 }
 
-/*Body*/
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f5f5f5;
-  }
-  
-  /* Background */
-  .outer_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: white;
-    padding: 0 100px; /* Add dynamic padding */
-  }
-
-  /* Inner Container */
-.inner_container {
+/** All Containers (including the bg) ----------------------------------------*/
+.container {
+  margin: 10px 10px 10px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Align to the left */
+  align-self: flex-start; /* Align self to the left */
+}
+
+
+/** Text Styles - only apply to certain text ---------------------------------*/
+.text {
+  padding: -0px 20px 20px 15px;
+  border-radius: 20px;
+  box-shadow: 19 10 10px rgba(0, 0, 0, 0.2);
+  min-height: 300px;
+  min-width: 490px; /* 490px width is the smallest that keeps the header as 1 line */
+  margin: 7px -7px -3px 7px;  /* top right bottom left */
+}
+
+/** Header 1 "Hello there, my name is Kevin!"---------------------------------*/
+h1 {
+  padding: 20px 20px 20px 15px;
+  border-radius: 20px;
+  box-shadow: 10 10 10px rgba(0, 0, 0, 0.2);
+  margin: 7px -7px -3px 7px; /* top right bottom left */
+}
+
+/** Body ---------------------------------------------------------------------*/
+body {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/** Outer Container: bg of everything (h1 and body), acts as a border --------*/
+/** nohing yet */
+
+/** Content Container: contains everything (h1, body) except the bg ---------*/
+.contentContainer {
+  height: 100vh;
+  padding: 0 100px;
+}
+
+/** Inner Container (main body round boxes w/ text EXCLUDING header) ---------*/
+.innerContainer {
+  margin: 10px;
   padding: 0px;
   border-radius: 20px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
   background-color: #87CEFA;
+  border-color: black;
 }
-  
-  /* Text styles */
-  .text {
-    padding: -0px 20px 20px 15px;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 19 10 10px rgba(0, 0, 0, 0.2);
-    margin: 10px 10px 10px 10px;
+/*t1 Dark Mode Inner Container (Has higher priority over *, so bg is gray)----*/
+.innerContainer.dark_mode {
+  background-color: #535353;
+  color: white;
+}
+
+/** Header Container (header round box w/ text, including border) ------------*/
+.headerContainer {
+  margin: 10px;
+  padding: 0px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  background-color: #87CEFA;
+  border-color: black;
+}
+/*t1 Dark Mode Header Container (Has higher priority over *, so bg is gray) --*/
+.headerContainer.dark_mode {
+  background-color:#535353;
+  color: white;
+}
+
+/**Toggle Button for light/dark mode ----------------------------------------**/
+.toggleButton {
+  position: absolute; /* always stays in the top right */
+  top: 10px;
+  right: 10px;
+  z-index: 1; /* always stays on top of everything else */
+}
+
+/** Animation moves l->r: header container text inside -----------------------*/
+@keyframes moveText {
+  0% {
+    /* starting position (left edge) */
+    left: -7%;
+  }
+  100% {
+    /* ending position (right edge) */
+    left: 0%;
+    transform: translateX(-0%);
+  }
+}
+/*t1 Animation also makes everything fade in ---------------------------------*/
+.fadeIn {
+  animation: fadeIn 3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
 
-.border {
-  padding: -0px 20px 5px 15px;
-  border-style: solid;
-  border-color:#87CEFA;
-  border-width: 10px;
-  border-radius: 20px;
-  box-shadow: 19 10 10px rgba(0, 0, 0, 0.2);
-  margin: 10px 10px 10px 10px;
-  background-color: white;
-  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
+  100% {
+    opacity: 1;
+  }
 }
-
-
-@font-face {
-  font-family: 'Sam'; /* choose a name for your font */
-  src: url('Fonts/Sam') format('opentype');
+/*t1 Execute both animations at the same time: move right, fade in -----------*/
+.animate {
+  position: relative;
+  animation: fadeIn 1s, moveText 1.5s ease-in-out; /* delay text moving */
+  transition: all 0.2s ease-in-out;
+}
+/*t1 Transparent background (so animation doesn't drag bg) -------------------*/
+.transparentBg {
+  background-color: transparent;
 }

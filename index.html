@@ -1,25 +1,32 @@
+<!--!you were last working on fixing your header 1 to be neat -->
+<!--!used to work oddly with margins?instead of using a border-->
+<!--!good luck :]-->
 <!DOCTYPE html>
 <html>
   <head>
     <title>My Website</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
-
   <body>
-    <div class="outer_container">
-      <div class="border">
-        <h1>Hello there, my name is Kevin! </h1>
-       </div>
-    <div class="inner_container">
-        <div class="text">
-          <p>I'm currently a Computer Science senior attending Sacramento State University.</p>
-        </div>
-        <div class="text">
-          <p>So far, I've used C++, Java, and SQL in my coursework.</p>
-          <p>I've also tried a little bit of HTML, CSS, Python, and Swift on my own just for fun, making little projects like this website.</p>
-          <p>My career path isn't set in stone, but I am very interested in backend development and databases :)</p>
-        </div>
-      </div>
+    <!-- outerContainer is the entire background for the whole thing-->
+    <div class="outerContainer container transparentBg">
+      <button id="dark_mode" class="toggleButton">Toggle Light/Dark Mode</button>
+      <div class = "fadeIn">
+        <div class = "contentContainer container animate transparentBg">
+          <div class="headerContainer">
+            <h1>Hello there! My name is Kevin.</h1> </div>
+          <!--innerContainer holds the body/main content of website-->
+          <div class="innerContainer container">
+            <div class="text paragraph1">
+              <p>I'm currently a <strong>Computer Science senior</strong> attending <em>Sacramento State</em>.</p>
+              <p>So far, I've gained experience in <strong>C++, Java, and SQL</strong> through my coursework.</p>
+              <p>I've also explored <strong>HTML, CSS, Python, and Swift</strong> independently, mainly for fun! I like creating small projects like this website.</p>
+              <p>While my career path isn't yet defined, I have a keen interest in <strong>backend development</strong> and
+                <strong>databases</strong>.</p>
+            </div> <!-- end of innerContainer -->
+          </div> <!-- end of contentContainer -->
+        </div> <!-- end of fadeIn -->
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
